@@ -94,9 +94,9 @@ class Timer {
   }
 
   @computed get display(): string {
-    const tenMili = this.totalMiliseconds / 10;
+    const tenMili = Math.floor(this.totalMiliseconds / 10);
     
-    const seconds: number = tenMili / 100;
+    const seconds: number = Math.floor(tenMili / 100);
     const minutes: number = Math.floor(seconds/60);
 
     return `${minutes} : ${format(seconds % 60, '00')} :  ${format(tenMili % 100, '00')}`;  
